@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            padding: 20px;
+            border: 2px solid #ff69b4;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff4081;
+            margin-bottom: 20px;
+        }
+
+        .option1 {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .option1.selected {
+            border-color: #ff4081;
+        }
+
+        .price-info {
+            font-weight: bold;
+        }
+
+        .strike {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .option:first-child {
+            border-top: none;
+        }
+
+        .option label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        .option1 input[type="radio"] {
+            accent-color: #ff4081;
+
+
+        }
+
+        .discount-tag {
+            background: #ff4081;
+            color: white;
+            font-size: 10px;
+            padding: 4px 4px;
+            border-radius: 2px;
+            margin-left: 5px;
+        }
+
+        .Standard {
+            font-size: 10px;
+            color: black;
+            font-weight: bold;
+            padding: 6px 30px;
+        }
+
+        .unit {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .price-info {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .strike {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0px;
+        }
+
+        .most-popular {
+            background: #ff4081;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 8px 6px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-left: 70%;
+        }
+
+        .size-color {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        select {
+            padding: 4px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .free-delivery {
+            color: #ff4081;
+            font-size: 12px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #ff4081;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e91e63;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">YAY! It's BOGO</div>
+
+        <!-- Option 1 -->
+        <div class="option1">
+            <label>
+                <input type="radio" name="offer">
+                <span class="unit">1 unit</span>
+                <span class="discount-tag">10% Off</span>
+                <div class="Standard">Standard Price</div>
+            </label>
+            <div class="price-info" data-price="10.00">$10.00 USD <span class="strike">$24.00 USD</span></div>
+        </div>
+
+        <div class="most-popular">MOST POPULAR</div>
+
+        <!-- Option 2 -->
+        <div class="option1">
+            <label>
+                <input type="radio" name="offer">
+                <span class="unit">2 unit</span>
+                <span class="discount-tag">20% Off</span>
+                <div style="margin-left:28px; margin-top: 10px;">
+                    <span>Size</span>
+                    <span style="margin-left:20px;">Colour</span>
+                </div>
+                <div class="size-color">
+                    <span>#1</span>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+
+                    <select id="colorSelect">
+                        <option>Black</option>
+                        <option>White</option>
+                        <option>Red</option>
+                    </select>
+
+
+                </div>
+                <div class="size-color">
+                    <span>#2</span>
+                    <select>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+
+                    <select id="colorSelect">
+                        <option>Black</option>
+                        <option>White</option>
+                        <option>Red</option>
+                    </select>
+                </div>
+            </label>
+            <div class="price-info" data-price="18.00">$18.00 USD <span class="strike">$48.00 USD</span></div>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="option1">
+            <label>
+                <input type="radio" name="offer">
+                <span class="unit">3 unit</span>
+                <span class="discount-tag">30% Off</span>
+            </label>
+            <div class="price-info" data-price="24.00">$24.00 USD <span class="strike">$72.00 USD</span></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="free-delivery">Free Delivery</div>
+            Total : $00.00 USD
+        </div>
+
+        <button class="btn">+ Add to Cart</button>
+    </div>
+
+
+
+
+    <script>
+        const radioButtons = document.querySelectorAll('input[name="offer"]');
+        const totalDisplay = document.querySelector('.footer');
+        const addToCartBtn = document.querySelector('.btn');
+
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                document.querySelectorAll('.option1').forEach(option => {
+                    option.classList.remove('selected');
+                });
+
+                const parentOption = radio.closest('.option1');
+                parentOption.classList.add('selected');
+
+                const priceElement = parentOption.querySelector('.price-info');
+                const selectedPrice = parseFloat(priceElement.dataset.price);
+
+                totalDisplay.innerHTML = `
+              <div class="free-delivery">Free Delivery</div>
+              Total : $${selectedPrice.toFixed(2)} USD
+            `;
+            });
+        });
+
+        addToCartBtn.addEventListener('click', () => {
+            const selectedRadio = document.querySelector('input[name="offer"]:checked');
+
+            if (!selectedRadio) {
+                alert('Please select an offer before adding to cart.');
+                return;
+            }
+
+            const parentOption = selectedRadio.closest('.option1');
+            const unit = parentOption.querySelector('.unit')?.innerText.trim();
+            const discount = parentOption.querySelector('.discount-tag')?.innerText.trim();
+            const price = parentOption.querySelector('.price-info')?.dataset.price;
+
+            const cartItem = {
+                unit: unit,
+                discount: discount,
+                price: parseFloat(price),
+                timestamp: new Date().toISOString()
+            };
+
+            localStorage.setItem('cartItem', JSON.stringify(cartItem));
+
+            alert(`Added to cart:\n${unit}, ${discount}, $${price}`);
+
+            console.log('Cart Data:', cartItem);
+        });
+
+        document.querySelectorAll('.size-color-container').forEach(container => {
+    container.style.display = 'none';
+});
+
+if (parentOption.classList.contains('option2')) {
+    const sizeColorContainer = parentOption.querySelector('.size-color-container');
+    if (sizeColorContainer) {
+        sizeColorContainer.style.display = 'block';
+    }
+}
+
+    </script>
+    
+    
+    
+    
+</body>
+
+</html>
